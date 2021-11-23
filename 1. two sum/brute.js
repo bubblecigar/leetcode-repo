@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 
-const bruteForce = (nums, target) => {
+var twoSum = function (nums, target) {
   const summationTable = {}
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
@@ -13,8 +13,4 @@ const bruteForce = (nums, target) => {
     }
   }
   return summationTable[target]
-}
-
-var twoSum = function (nums, target) {
-  return bruteForce(nums, target)
 };

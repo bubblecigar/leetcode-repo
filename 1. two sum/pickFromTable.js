@@ -20,7 +20,7 @@ const createNumsIndexTable = nums => nums.reduce(
   }, {}
 )
 
-const pickFromTable = (nums, target) => {
+var twoSum = function (nums, target) {
   const numsIndexTable = createNumsIndexTable(nums)
   let answer
   nums.find(
@@ -28,15 +28,12 @@ const pickFromTable = (nums, target) => {
       const partnerNumber = target - number
       const possibleIndexes = numsIndexTable[partnerNumber] || []
       const partnerIndex = possibleIndexes.find(index => index !== i)
-      if (partnerIndex) {
+      const partnerExist = partnerIndex !== undefined
+      if (partnerExist) {
         answer = [i, partnerIndex]
       }
-      return partnerIndex
+      return partnerExist
     }
   )
   return answer
-}
-
-var twoSum = function (nums, target) {
-  return pickFromTable(nums, target)
 };

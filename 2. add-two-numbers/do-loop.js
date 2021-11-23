@@ -11,8 +11,6 @@
  * @return {ListNode}
  */
 
-const checkExistUnProcessedDigit = (node1, node2) => !!(node1 || node2)
-
 const addTwoNumbers = function (l1, l2) {
     const result = new ListNode(0)
 
@@ -33,7 +31,7 @@ const addTwoNumbers = function (l1, l2) {
 
         currentL1Node = currentL1Node ?.next
         currentL2Node = currentL2Node ?.next
-        existUnProcessedDigit = checkExistUnProcessedDigit(currentL1Node, currentL2Node)
+        existUnProcessedDigit = !!(currentL1Node || currentL2Node)
         if (existUnProcessedDigit || tenDigit) {
             currentResultNode.next = new ListNode(tenDigit)
         }

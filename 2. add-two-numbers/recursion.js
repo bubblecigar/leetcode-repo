@@ -27,10 +27,7 @@ const sumHeadDigit = (l1, l2, result) => {
     result.next = new ListNode(tenDigit)
   }
   if (existUnprocessedDigit) {
-    const nextNode1 = l1 ?.next
-      const nextNode2 = l2 ?.next
-      result.next = new ListNode(tenDigit)
-    return sumHeadDigit(nextNode1, nextNode2, result.next)
+    return sumHeadDigit(l1 ?.next, l2 ?.next, result.next)
   }
 }
 
