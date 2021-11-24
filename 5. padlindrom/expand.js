@@ -11,8 +11,8 @@ const expandPalindrome = (s, leftCursor, rightCursor) => {
   const nextLeadingChar = s[nextLeftCursor]
   const nextEndingChar = s[nextRightCursor]
   const outOfBound = nextLeadingChar === undefined || nextEndingChar === undefined
-  const isMirrored = nextLeadingChar === nextEndingChar
-  if (outOfBound || !isMirrored) {
+  const breakSymmetry = nextLeadingChar !== nextEndingChar
+  if (outOfBound || breakSymmetry) {
     return s.slice(leftCursor, rightCursor + 1)
   } else {
     return expandPalindrome(s, nextLeftCursor, nextRightCursor)
@@ -36,13 +36,13 @@ var longestPalindrome = function (s) {
 
   let answer = ''
   for (let i = 0; i < s.length; i++) {
-    const oddSubstring = getLongestOddPalindromeFromCenter(s, i)
-    if (oddSubstring.length > answer.length) {
-      answer = oddSubstring
+    const oddPalindrome = getLongestOddPalindromeFromCenter(s, i)
+    if (oddPalindrome.length > answer.length) {
+      answer = oddPalindrome
     }
-    const evenSubstring = getLongestEvenPalindromeFromCenter(s, i)
-    if (evenSubstring.length > answer.length) {
-      answer = evenSubstring
+    const evenPalindrome = getLongestEvenPalindromeFromCenter(s, i)
+    if (evenPalindrome.length > answer.length) {
+      answer = evenPalindrome
     }
   }
   return answer
