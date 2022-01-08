@@ -42,7 +42,7 @@ var combinationSum = function (candidates, target) {
   const distributions = recursionFunction(candidates, target, [new Array(candidates.length).fill(0)])
   const set = new Set(distributions.map(ar => JSON.stringify(ar)))
   const answers = []
-  for (item of set) {
+  for (let item of set) {
     const uniqueDistribution = JSON.parse(item)
     const answer = uniqueDistribution.reduce(
       (acc, cur, i) => {

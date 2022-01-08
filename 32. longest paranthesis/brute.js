@@ -8,12 +8,12 @@ var longestValidParentheses = function (s) {
     return 0
   }
 
-  const indexRecord = []
+  const invalidCharIndexRecord = []
   for (let i = 0; i < s.length; i++) {
-    indexRecord.push(i)
+    invalidCharIndexRecord.push(i)
   }
 
-  // delete () and update the index indexRecord until all innerMostParenthesis has been deleted
+  // delete () and update the index invalidCharIndexRecord until all innerMostParenthesis has been deleted
   let hasInnerMostParenthesis
   do {
     hasInnerMostParenthesis = false
@@ -24,7 +24,7 @@ var longestValidParentheses = function (s) {
         const matched = left === '(' && right === ')'
         if (matched) {
           s = s.slice(0, i) + s.slice(i + 2)
-          indexRecord.splice(i, 2)
+          invalidCharIndexRecord.splice(i, 2)
           hasInnerMostParenthesis = true
         }
       }
@@ -32,11 +32,11 @@ var longestValidParentheses = function (s) {
   } while (hasInnerMostParenthesis)
 
   let answer = 0
-  indexRecord.unshift(-1)
-  indexRecord.push(stringLength)
-  for (let i = 0; i < indexRecord.length; i++) {
-    const leftIndex = indexRecord[i]
-    const rightIndex = indexRecord[i + 1]
+  invalidCharIndexRecord.unshift(-1)
+  invalidCharIndexRecord.push(stringLength)
+  for (let i = 0; i < invalidCharIndexRecord.length; i++) {
+    const leftIndex = invalidCharIndexRecord[i]
+    const rightIndex = invalidCharIndexRecord[i + 1]
     const length = rightIndex - leftIndex - 1
     if (length >= 2) {
       answer = Math.max(answer, length)

@@ -1,0 +1,141 @@
+:root {
+  --dark: #4F4D53;
+  --light: #E8BE02;
+  --gap-xs: 5px;
+  --gap-sm: 20px;
+  --gap-md: 50px;
+  --gap-lg: 100px;
+  --gap-xl: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+nav {
+  /* layout */
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-left: 20%;
+
+  /* background */
+  background-color: var(--dark);
+}
+
+h1 {
+  /* layout */
+  padding: var(--gap-xl) 0;
+  text-align: center;
+
+  /* font */
+  color: var(--dark);
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 100px;
+}
+
+h2 {
+  /* layout */
+  padding: var(--gap-xl) 0 0 0;
+
+  /* font */
+  color: var(--light);
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 64px;
+  text-align: center;
+}
+
+h3 {
+  /* layout */
+  text-align: center;
+  padding: var(--gap-md) 0 var(--gap-sm) 0;
+
+  /* font */
+  color: var(--light);
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 20px;
+}
+
+h4 {
+  /* layout */
+  padding: var(--gap-xs) 0;
+
+  /* font */
+  color: #FFFFFF;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+p {
+  /* layout */
+  width: 60%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: var(--gap-lg) 0;
+
+  /* font */
+  color: var(--dark);
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer {
+  /* height: 320px; */
+  background: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20% var(--gap-lg) 20%;
+  border-top: 12px solid var(--light);
+}
+
+footer div {
+  /* layout */
+  padding: var(--gap-sm);
+}
+
+.hero-img {
+  /* layout */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+
+  /* background */
+  background-image: url('./media/img_hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.team-members {
+  /* layout */
+  position: absolute;
+  bottom: 0px;
+  transform: translateY(50%);
+  white-space: nowrap;
+}
+
+.team-members img {
+  /* layout */
+  padding: var(--gap-md);
+}
+
+.join-us {
+  /* layout */
+  padding-top: var(--gap-sm);
+}

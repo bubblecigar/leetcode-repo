@@ -16,6 +16,5 @@ var groupAnagrams = function (strs) {
     }
   }
 
-
   return Object.keys(anagrams).map(key => anagrams[key])
 };
